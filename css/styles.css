@@ -1,1 +1,209 @@
-/* Add Code */
+/*
+   Author: Imani Hollie
+   Date: 02/10/2026
+*/
+
+/* ==============================
+   Theme Variables
+   ============================== */
+:root {
+  --white: #f1f1f1;
+  --off-white: #faf5e4;
+  --gold: #ffde59;
+  --purple: #8c52ff;
+  --dark: #2e0b70;
+
+  --radius: 5px;
+  --space: 20px;
+  --width: 1000px;
+  --header-h: 75px;
+}
+
+/* ==============================
+   Reset + Base
+   ============================== */
+* { box-sizing: border-box; }
+
+body, h1, h2, h3, img, header, nav, main, footer {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--white);
+  color: var(--dark);
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.5;
+}
+
+img { width: 100%; display: block; }
+
+a {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+/* ==============================
+   Typography
+   ============================== */
+h1, h2, h3 {
+  font-family: "Press Start 2P", system-ui;
+  color: var(--purple);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+/* ==============================
+   Layout
+   ============================== */
+main, section {
+  max-width: var(--width);
+  margin: 40px auto;
+  padding: 0 var(--space);
+}
+
+/* ==============================
+   Header + Navigation
+   ============================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  height: var(--header-h);
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: var(--width);
+  margin: auto;
+  padding: 0 var(--space);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand, .nav-menu a {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* Navigation menu */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+  width: 25px;
+  height: 5px;
+  background: var(--white);
+  display: block;
+  position: relative;
+}
+
+.hamburger::before, .hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before { top: -6px; }
+
+.hamburger::after  { top: 6px; }
+
+/* Hidden checkbox */
+.nav-checkbox {
+  display: none;
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+
+  .nav-menu {
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: var(--dark);
+    flex-direction: column;
+    padding: var(--space);
+    display: none;
+  }
+
+  .nav-checkbox:checked ~ .nav-menu {
+    display: flex;
+  }
+}
+
+/* ==============================
+   Hero / Cards
+   ============================== */
+.hero {
+  text-align: center;
+  padding: 50px var(--space);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 25px;
+  margin-top: 15px;
+  background: var(--purple);
+  color: #fff;
+  border-radius: var(--radius);
+}
+
+.grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.grid > div {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 15px;
+  border-radius: var(--radius);
+}
+
+/* ==============================
+   Footer
+   ============================== */
+footer {
+  background: var(--dark);
+  color: var(--white);
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 60px;
+}
+
+/* ==============================
+   Accessibility
+   ============================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
