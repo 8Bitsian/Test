@@ -129,9 +129,7 @@ main, section {
 .hamburger::after  { top: 6px; }
 
 /* Hidden checkbox */
-.nav-checkbox {
-  display: none;
-}
+.nav-checkbox { display: none; }
 
 /* Mobile nav */
 @media (max-width: 768px) {
@@ -154,13 +152,58 @@ main, section {
 }
 
 /* ==============================
+   Logos and Icons
+   ============================== */
+
+.logo, .icon { color: var(--gold); }
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  vertical-align: -3px;
+  margin-right: 6px;
+}
+
+/* Normalize inline SVG sizing (scales with font-size by default) */
+.logo svg, .icon svg {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+/* Inherit color for common shapes */
+.logo svg path, .logo svg rect,
+.logo svg circle, .logo svg polygon,
+.icon svg path, .icon svg rect,
+.icon svg circle, .icon svg polygon {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+/* Utility sizes (optional) */
+.icon-18 { font-size: 18px; }
+.icon-24 { font-size: 24px; }
+.icon-32 { font-size: 32px; }
+.logo-24 { font-size: 24px; }
+.logo-32 { font-size: 32px; }
+
+/* ==============================
    Hero / Cards
    ============================== */
 .hero {
   text-align: center;
   padding: 50px var(--space);
   background: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid var(--gold);
   border-radius: var(--radius);
 }
 
@@ -181,7 +224,7 @@ main, section {
 
 .grid > div {
   background: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid var(--gold);
   padding: 15px;
   border-radius: var(--radius);
 }
